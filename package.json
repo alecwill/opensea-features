@@ -1,0 +1,97 @@
+{
+  "name": "extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "1.6.5",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/chrome": "^0.0.154",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-timeago": "^4.1.3",
+    "async-sema": "^3.1.1",
+    "dataloader": "^2.0.0",
+    "ethers": "^5.5.4",
+    "framer-motion": "^4.1.17",
+    "graphql": "^15.5.2",
+    "graphql-request": "^3.5.0",
+    "lodash": "^4.17.21",
+    "opensea-js": "^1.2.0",
+    "parcel": "^2.0.0-rc.0",
+    "patch-package": "^6.4.7",
+    "preact": "^10.5.14",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-intersection-observer": "^8.32.1",
+    "react-scripts": "4.0.3",
+    "react-select-search": "^3.0.8",
+    "react-timeago": "^6.2.1",
+    "sb": "^6.3.10",
+    "storybook-addon-toolbar-actions": "^0.4.8",
+    "typescript": "^4.4.2",
+    "web-vitals": "^1.0.1",
+    "web3": "^1.5.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && yarn clean-build-extension-scripts",
+    "clean-build-extension-scripts": "parcel build src/content.tsx src/background.ts src/pageContextInject.ts --dist-dir build/static/js --no-cache",
+    "build-extension-scripts": "parcel build src/content.tsx src/background.ts src/pageContextInject.ts --dist-dir build/static/js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "postinstall": "patch-package",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "babel-loader": "8.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "2.0.0-rc.0",
+    "@parcel/transformer-svg-react": "^2.0.0-nightly.1739",
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/node-logger": "^6.3.10",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.10"
+  }
+}
